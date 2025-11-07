@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leshar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+</head>
+<body>
+    <main class="login-container">
+        <div class="info-panel">
+            <img class="logo" src="#" alt="Logo da Leshar">
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-face card-front">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="LoginEmail">Email:</label>
+                            <input type="email" id="LoginEmail" name="email" placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group">
+                            <label for="LoginSenha">Senha:</label>
+                            <input type="password" id="LoginSenha" name="senha" placeholder="Digite sua senha">
+                        </div>
+                            <button id="entrar">Entrar</button>
+                            <p class="change-form-link">Não tem uma conta? <a href="#" id="flipToRegister">Cadastre-se</a></p>
+                    </form>
+                </div>
+                <div class="card-face card-back">
+                    <h2>Cadastro</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="CadastroNome">Nome:</label>
+                            <input type="text" id="CadastroNome" name="nome" placeholder="Digite seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="CadastroEmail">Email:</label>
+                            <input type="email" id="CadastroEmail" name="email" placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group">
+                            <label for="CadastroSenha">Senha:</label>
+                            <input type="password" id="CadastroSenha" name="senha" placeholder="Digite sua senha">
+                        </div>
+                        <button id="cadastrar">Cadastrar</button>
+                        <p class="change-form-link">Já tem uma conta? <a href="#" id="flipToLogin">Faça Login</a></p>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<script src="../js/login.js"></script>
+<script src="../js/flip.js"></script>
+</body>
+</html>
