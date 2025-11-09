@@ -19,6 +19,7 @@ if (!isset($_POST["LoginEmail"]) || !isset($_POST["LoginSenha"])) {
 $email = $_POST["LoginEmail"];
 $senha = $_POST["LoginSenha"];
 
+
 $stmt = $conexao->prepare("SELECT * FROM usuario WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
@@ -29,6 +30,7 @@ if ($resultado->num_rows > 0) {
 
     if (password_verify($senha, $usuario['senha'])) {
         $_SESSION["usuario"] = $usuario;
+        $_SESSION["user_id"] = (int) $usuario['id'];
         $retorno = [
             "status" => "ok",
             "mensagem" => "Login realizado com sucesso.",
