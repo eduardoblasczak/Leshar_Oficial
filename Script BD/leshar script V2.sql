@@ -109,3 +109,13 @@ CREATE TABLE IF NOT EXISTS transferencia_credito (
     FOREIGN KEY (aula_id) REFERENCES aula(id) ON DELETE CASCADE,
     FOREIGN KEY (aluno_id) REFERENCES aluno(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS chat_message (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    remetente_id INT NOT NULL, 
+    destinatario_id INT NOT NULL, 
+    mensagem TEXT NOT NULL, 
+    data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    FOREIGN KEY (remetente_id) REFERENCES usuario(id) ON DELETE CASCADE,
+    FOREIGN KEY (destinatario_id) REFERENCES usuario(id) ON DELETE CASCADE
+);
