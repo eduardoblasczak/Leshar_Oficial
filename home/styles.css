@@ -49,21 +49,29 @@ body {
     flex: 1;
     max-width: 400px;
 }
+
 #sair {
     cursor: pointer;
     background: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 50px;
     font-size: 0.95rem;
     font-weight: 600;
     transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: calc(100% - 3rem);
+    margin: 1.5rem 1.5rem 0;
+}
 
-}
 #sair:hover {
-    background: red;
+    background: #d32f2f;
 }
+
 .search-bar input {
     width: 100%;
     padding: 12px 20px;
@@ -130,10 +138,21 @@ body {
     color: var(--primary-color);
     font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
     letter-spacing: 2px;
     padding: 0 1rem;
+}
+
+.sidebar-left .subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .sidebar-left nav ul {
@@ -157,6 +176,12 @@ body {
     font-size: 0.95rem;
     position: relative;
     overflow: hidden;
+    gap: 1rem;
+}
+
+.sidebar-left nav ul li a i {
+    width: 20px;
+    text-align: center;
 }
 
 .sidebar-left nav ul li a::before {
