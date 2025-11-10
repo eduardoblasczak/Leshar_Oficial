@@ -25,7 +25,11 @@ async function verificarLogin(){
 
     if (resposta.status == "ok") {
         alert("Login realizado com sucesso!");
-        window.location.href = "../home/";
+        if (resposta.data.tipo_usuario == "ADM") {
+            window.location.href = "../admin/"; 
+        } else {
+            window.location.href = "../home/";
+        }
     } else {
         console.error("Erro no login:", error)
         alert ("Credenciais inválidas.");

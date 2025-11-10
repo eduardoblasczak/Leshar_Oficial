@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Administrador - Leshar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <!-- 🔝 Topbar -->
+  <header class="topbar">
+    <img class="logo" src="../images/logo.png" alt="Logo da Leshar">
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+    <div class="credits">
+      Créditos: <span id="user-credit">R$ 0,00</span> 
+    </div>
+  </header>
+
+  <div class="page">
+    <aside class="sidebar-left">
+  <h3>Leshar</h3>
+  <nav>
+    <ul>
+      <li>
+        <a href="../home/index.html">
+          <i class="fa-solid fa-house"></i> Home
+        </a>
+      </li>
+      <li>
+        <a href="../aulas/index.html">
+          <i class="fa-solid fa-chalkboard-user"></i> Aulas
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-users"></i> Conexões
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-user"></i> Perfil
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-gear"></i> Configurações
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <button id="sair">
+    <i class="fa-solid fa-right-from-bracket"></i> Sair
+  </button>
+</aside>
+    <!-- 🏠 Conteúdo principal -->
+    <main class="main">
+      <h1>Bem vindo </h1>
+      <p>Conteúdo principal da home...</p>
+      <p> O Contéudo Final ainda está em desenvolvimento, para fazer os testes de crud, escolha uma das opções do menu.</p>
+      <p> Por ser apenas um teste, caso queira ir para o perfil de Administrador, terá um crud também de exclusão ou editar os usuários cadastrados.</p>
+      <p> Para acessar, clique <a href="#">AQUI</a></p>
+    </main>
+
+    <!-- 💬 Sidebar direita -->
+    <aside class="sidebar-right" aria-label="Conversas recentes">
+      <h3>Conversas</h3>
+      <div id="conversations-list" class="conversations"></div>
+    </aside>
+  </div>
+
+  <script src="../js/chat_conversation.js"></script>
+  <script src="../js/home.js"></script>
+  <script src="../js/valida_sessao.js"></script>
+</body>
+</html>

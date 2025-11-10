@@ -122,3 +122,7 @@ CREATE TABLE IF NOT EXISTS chat_message (
 
 ALTER TABLE aula 
 MODIFY COLUMN mensagem TEXT;
+
+INSERT INTO usuario(nome, email, senha, tipo_usuario)
+VALUES 
+('ADM', 'adm@adm.com', 'adm', 'ADM'); 
