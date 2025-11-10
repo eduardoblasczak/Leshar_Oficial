@@ -1,0 +1,63 @@
+/* Layout básico: conteúdo + sidebar à direita */
+.page {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.main {
+  flex: 1;
+}
+
+.sidebar {
+  width: 320px;
+  border-left: 1px solid #ddd;
+  padding-left: 16px;
+}
+
+.conversations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conv {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #eee;
+  transition: background 0.12s;
+}
+
+.conv:hover {
+  background: #f5f5f5;
+}
+
+.conv .name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.conv .last {
+  color: #555;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conv .time {
+  float: right;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+}

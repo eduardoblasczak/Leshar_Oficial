@@ -1,98 +1,32 @@
-<!-- ...existing code... -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Home - Leshar</title>
-  <style>
-    /* layout básico: conteúdo + sidebar à direita */
-    .page { display: flex; gap: 20px; max-width: 1100px; margin: 20px auto; padding: 0 16px; }
-    .main { flex: 1; }
-    .sidebar { width: 320px; border-left: 1px solid #ddd; padding-left: 16px; }
-    .conversations { display: flex; flex-direction: column; gap: 8px; }
-    .conv { padding: 10px; border-radius: 8px; cursor: pointer; background: #fff; border: 1px solid #eee; transition: background .12s; }
-    .conv:hover { background: #f5f5f5; }
-    .conv .name { font-weight: 600; margin-bottom: 4px; }
-    .conv .last { color: #555; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .conv .time { float: right; color: #888; font-size: 0.85rem; }
-    /* responsivo */
-    @media (max-width:900px) { .sidebar { display: none; } }
-  </style>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="page">
     <div class="main">
-      <!-- ...existing main content da home... -->
       <h1>Bem vindo(a)</h1>
       <p>Conteúdo principal da home...</p>
+    </div>
+    <div id="lista">
+
     </div>
 
     <aside class="sidebar" aria-label="Conversas recentes">
       <h3>Conversas</h3>
       <div id="conversations-list" class="conversations">
-        <!-- carregado pelo JS -->
       </div>
     </aside>
   </div>
 
-  <script>
-    async function loadConversations() {
-      try {
-        // ajuste o caminho se necessário; aqui assume que home/index.html está em /home/
-        const res = await fetch('../chat/conversations.php', { credentials: 'same-origin' });
-        if (!res.ok) {
-          console.warn('Não autenticado ou erro ao buscar conversas');
-          return;
-        }
-        const convs = await res.json();
-        const list = document.getElementById('conversations-list');
-        list.innerHTML = '';
-
-        if (!convs.length) {
-          list.innerHTML = '<div>Nenhuma conversa recente.</div>';
-          return;
-        }
-
-        convs.forEach(c => {
-          const div = document.createElement('div');
-          div.className = 'conv';
-          div.dataset.id = c.partner_id;
-
-          const time = new Date(c.data_envio).toLocaleString([], { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-
-          div.innerHTML = `
-            <div><span class="name">${escapeHtml(c.partner_name)}</span><span class="time">${time}</span></div>
-            <div class="last">${escapeHtml(c.last_message)}</div>
-          `;
-
-          div.addEventListener('click', () => {
-            // abre a conversa com o parceiro (usa chat/index.php?chat_with=ID)
-            window.location.href = `../chat/index.php?chat_with=${c.partner_id}`;
-          });
-
-          list.appendChild(div);
-        });
-      } catch (err) {
-        console.error('Erro ao carregar conversas', err);
-      }
-    }
-
-    // função mínima para escapar HTML na exibição
-    function escapeHtml(str) {
-      if (!str) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
-
-    loadConversations();
-    // opcional: atualizar periodicamente
-    setInterval(loadConversations, 5000);
-  </script>
+  <script src="../js/home.js"></script>
+  <script src="../js/chat_conversation.js"></script>
+  <script src="../js/valida_sessao.js"></script>
 </body>
 </html>
-<!-- ...existing code... -->
