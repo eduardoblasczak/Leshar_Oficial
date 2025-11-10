@@ -124,7 +124,7 @@ h2 {
     border-radius: 8px;
 }
 
-.btn {
+button {
     width: 100%;
     padding: 15px;
     border: none;
@@ -137,7 +137,7 @@ h2 {
     transition: background-color 0.3s;
 }
 
-.btn:hover {
+button:hover {
     background-color: var(--primary-hover-color);
 }
 

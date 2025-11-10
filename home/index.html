@@ -4,29 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Home - Leshar</title>
-
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <!-- 🔝 Topbar -->
+  <header class="topbar">
+    <img class="logo" src="../images/logo.png" alt="Logo da Leshar">
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+    <div class="credits">
+      Créditos: <span id="user-credit">R$ 0,00</span> 
+    </div>
+  </header>
+
   <div class="page">
-    <div class="main">
+    <aside class="sidebar-left">
+      <h3>Menu</h3>
+      <nav>
+        <ul>
+          <li><a href="#">Aulas</a></li>
+          <li><a href="#">Conexões</a></li>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Configurações</a></li>
+        </ul>
+        <button id="sair">Sair</button>
+
+      </nav>
+    </aside>
+    <!-- 🏠 Conteúdo principal -->
+    <main class="main">
       <h1>Bem vindo(a)</h1>
       <p>Conteúdo principal da home...</p>
-    </div>
-    <div id="lista">
+      <div id="lista"></div>
+    </main>
 
-    </div>
-
-    <aside class="sidebar" aria-label="Conversas recentes">
+    <!-- 💬 Sidebar direita -->
+    <aside class="sidebar-right" aria-label="Conversas recentes">
       <h3>Conversas</h3>
-      <div id="conversations-list" class="conversations">
-      </div>
+      <div id="conversations-list" class="conversations"></div>
     </aside>
   </div>
 
   <script src="../js/home.js"></script>
-  <script src="../js/chat_conversation.js"></script>
   <script src="../js/valida_sessao.js"></script>
 </body>
 </html>
